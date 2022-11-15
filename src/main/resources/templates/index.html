@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+    <meta charset="ISO-8859-1">
+    <title>User Registration</title>
+    <h1>Chercher Un étudiant(s)</h1>
+    <div align="center">
+        <h1>User Registration</h1>
+        <h2 th:if="${errorMessage}"  th:text="${errorMessage}">Error</h2>
+        <form th:action="@{/register}" method="post"  th:object="${user}">
+            <label> nom:</label>
+            <input type="text" th:field="*{nom}" /><br/>
+
+            <label>prenom:</label>
+            <input type="text" th:field="*{prenom}" /><br/>
+
+            <label>cin:</label>
+            <input type="text" th:field="*{cin}" /><br/>
+
+            <label>age:</label>
+            <input type="number" th:field="*{age}" /><br/>
+
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</head>
+<body>
+
+</body>
+</html>
